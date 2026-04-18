@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MakanFinance | Gold, Home & Car Loans @ 8.75% p.a.</title>
+  <meta name="description" content="India's fastest loan platform: Gold, Home, Car, Business Loans from 8.75% p.a. Instant approval, paperless, 150+ partners. RBI registered.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #010409;
+      color: #eef2ff;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --bg-deep: #010409;
+      --bg-elevated: #0d1117;
+      --glass-bg: rgba(13, 17, 23, 0.85);
+      --neon-blue: #3b82f6;
+      --neon-cyan: #06b6d4;
+      --neon-gold: #f5a623;
+      --neon-green: #10b981;
+      --border-dim: rgba(59, 130, 246, 0.25);
+      --glow-blue: 0 0 12px rgba(59, 130, 246, 0.4);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0d1117;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--neon-blue);
+      border-radius: 8px;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-dim);
+      border-radius: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid var(--neon-blue);
+      border-radius: 60px;
+      padding: 6px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--neon-cyan);
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff, var(--neon-cyan), var(--neon-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: #8b949e;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(105deg, var(--neon-blue), #1e40af);
+      color: white;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.6);
+    }
+
+    .btn-gold {
+      background: linear-gradient(105deg, #f5a623, #d97706);
+      color: #0a0c10;
+      font-weight: 800;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 166, 35, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--neon-blue);
+      color: var(--neon-blue);
+    }
+    .btn-outline:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(1, 4, 9, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-dim);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      background: var(--neon-blue);
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--glow-blue);
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, var(--neon-cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+    }
+    .nav-links a {
+      color: #b9c7d9;
+      font-weight: 500;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      color: var(--neon-blue);
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 2.5px;
+      background: white;
+      transition: 0.3s ease;
+      border-radius: 2px;
+    }
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #010409;
+      padding: 20px;
+      gap: 16px;
+      border-top: 1px solid var(--border-dim);
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+    .mobile-menu a {
+      color: #b9c7d9;
+      text-decoration: none;
+      padding: 12px 8px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: 0.2s;
+    }
+    .mobile-menu a:hover {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--neon-blue);
+    }
+    .mobile-menu .mobile-cta {
+      background: linear-gradient(105deg, var(--neon-blue), #1e40af);
+      color: white;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-right .btn-primary {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .hero-grid,
+      .services-grid,
+      .contact-dual,
+      .emi-panel {
+        grid-template-columns: 1fr !important;
+      }
+      .stats-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    /* hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+      min-height: 90vh;
+      padding-top: 30px;
+    }
+
+    .badge-tech {
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid var(--neon-blue);
+      border-radius: 40px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .floating-card {
+      background: rgba(13, 17, 23, 0.8);
+      backdrop-filter: blur(18px);
+      border-radius: 38px;
+      border: 1px solid var(--neon-cyan);
+      padding: 32px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .service-tile {
+      background: var(--glass-bg);
+      border-radius: 32px;
+      padding: 32px;
+      border: 1px solid var(--border-dim);
+      transition: 0.25s;
+    }
+    .service-tile:hover {
+      transform: translateY(-8px);
+      border-color: var(--neon-cyan);
+    }
+
+    .stats-modern {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .stat-card {
+      background: var(--glass-bg);
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .stat-card:hover {
+      border-color: var(--neon-cyan);
+      transform: translateY(-3px);
+    }
+
+    .emi-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      background: var(--glass-bg);
+      border-radius: 40px;
+      padding: 40px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: #2d3748;
+      border-radius: 8px;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: var(--neon-blue);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 6px var(--neon-blue);
+    }
+
+    .form-dark input, .form-dark select {
+      background: #0f1117;
+      border: 1px solid #2d3748;
+      border-radius: 20px;
+      padding: 14px 18px;
+      color: white;
+      width: 100%;
+      font-family: inherit;
+    }
+    .form-dark input:focus, .form-dark select:focus {
+      outline: none;
+      border-color: var(--neon-blue);
+    }
+
+    .float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      background: #25d366;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .float-wa:hover {
+      transform: scale(1.1);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scene-2021 {
+      background: radial-gradient(circle at 20% 30%, #0b1120, #03050a);
+      border-radius: 48px;
+      padding: 60px 40px;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-dim);
+      padding: 48px 0;
+      background: #010409;
+    }
+
+    @keyframes tickerMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .slider-group {
+      margin-bottom: 28px;
+    }
+    .slider-group label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .slider-group div {
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 780px) {
+      .emi-panel { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .section { padding: 60px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+        <span class="brand">Makan<span style="color:#06b6d4;">Finance</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Loans</a></li>
+        <li><a href="#gold-loan">Gold Loan</a></li>
+        <li><a href="#scene2021">Scene 2021</a></li>
+        <li><a href="#emi">EMI Tool</a></li>
+        <li><a href="#contact">Connect</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><i class="fab fa-whatsapp"></i> Apply Now</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home" onclick="closeMobileMenu()">🏠 Home</a>
+      <a href="#services" onclick="closeMobileMenu()">📋 Loans</a>
+      <a href="#gold-loan" onclick="closeMobileMenu()">✨ Gold Loan</a>
+      <a href="#scene2021" onclick="closeMobileMenu()">📅 Scene 2021</a>
+      <a href="#emi" onclick="closeMobileMenu()">🧮 EMI Tool</a>
+      <a href="#contact" onclick="closeMobileMenu()">📞 Connect</a>
+      <a href="#contact" class="btn btn-primary mobile-cta" onclick="closeMobileMenu()"><i class="fab fa-whatsapp"></i> Get Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" style="padding-top: 110px;">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="section-tag"><i class="fas fa-microchip"></i> India's Fastest Loan Hub</div>
+        <h1 class="section-title">Gold, Home & Car Loans<br>Starting at <span style="color:#f5a623;">8.75% p.a.</span></h1>
+        <p class="section-sub" style="margin:0 0 24px 0; text-align:left;">Instant eligibility, doorstep gold valuation, paperless approval. 150+ banking partners. RBI registered.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px;">
+          <span class="badge-tech"><i class="fas fa-gem"></i> Gold Loan 1.25% pm</span>
+          <span class="badge-tech"><i class="fas fa-home"></i> Home Loan 8.75%</span>
+          <span class="badge-tech"><i class="fas fa-car"></i> Car Loan 8.75%</span>
+        </div>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#contact" class="btn btn-primary"><i class="fas fa-bolt"></i> Check Eligibility</a>
+          <a href="https://wa.me/919131613481?text=Hi%2C%20I%20need%20loan%20assistance%20(Gold%2FHome%2FCar)" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Expert</a>
+          <a href="https://www.instagram.com/makanfinance?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-outline"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+        <div class="stats-modern" style="margin-top: 48px;">
+          <div class="stat-card"><div style="font-size: 32px; font-weight: 900;">₹188Cr+</div><div>Loans Disbursed</div></div>
+          <div class="stat-card"><div style="font-size: 32px; font-weight: 900;">3.2K+</div><div>Happy Clients</div></div>
+          <div class="stat-card"><div style="font-size: 32px; font-weight: 900;">4.95★</div><div>Google Rating</div></div>
+          <div class="stat-card"><div style="font-size: 32px; font-weight: 900;">150+</div><div>Bank Partners</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="floating-card">
+          <i class="fas fa-coins" style="font-size: 48px; color: #f5a623;"></i>
+          <h3 style="margin: 16px 0;">Gold Loan Express</h3>
+          <p>Loan against gold jewellery | Instant valuation | Up to ₹2 Cr</p>
+          <div style="background: #0f1117; border-radius: 24px; padding: 16px; margin: 16px 0;">
+            <i class="fas fa-rupee-sign"></i> <strong>1.25% per month | 8.75% p.a. equivalent</strong>
+          </div>
+          <a href="https://wa.me/919131613481?text=Hi%2C%20I%20want%20to%20check%20Gold%20Loan%20rate%20and%20eligibility" target="_blank" class="btn btn-gold" style="width:100%;"><i class="fab fa-whatsapp"></i> Check Gold Loan Rate</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST TICKER -->
+<div style="background:#0d1117; padding: 14px; overflow: hidden; border-top:1px solid var(--border-dim); border-bottom:1px solid var(--border-dim);">
+  <div style="display: flex; gap: 48px; animation: tickerMove 28s linear infinite; width: max-content;">
+    <i class="fas fa-building"></i> SBI &nbsp;&nbsp; <i class="fas fa-university"></i> HDFC &nbsp;&nbsp; <i class="fas fa-chart-line"></i> ICICI &nbsp;&nbsp; <i class="fas fa-gem"></i> Muthoot &nbsp;&nbsp; <i class="fas fa-clock"></i> 8.75% ROI &nbsp;&nbsp; <i class="fas fa-shield-alt"></i> RBI Registered &nbsp;&nbsp;
+    <i class="fas fa-building"></i> SBI &nbsp;&nbsp; <i class="fas fa-university"></i> HDFC &nbsp;&nbsp; <i class="fas fa-chart-line"></i> ICICI &nbsp;&nbsp; <i class="fas fa-gem"></i> Muthoot &nbsp;&nbsp; <i class="fas fa-clock"></i> 8.75% ROI
+  </div>
+</div>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag" style="margin:0 auto 20px;"><i class="fas fa-th-large"></i> Our Loan Products</div>
+      <h2 class="section-title">All Loans @ <span style="color:#f5a623;">8.75% p.a.</span> Minimum</h2>
+      <div class="section-sub">Transparent, lowest rates, zero hidden charges — guaranteed.</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-tile reveal"><i class="fas fa-home" style="font-size: 42px; color:#3b82f6;"></i><h3 style="margin: 18px 0 8px;">Home Loan</h3><p>Up to ₹5Cr | Tenure 30 yrs | 8.75% p.a.*</p><div style="margin: 16px 0; background:#11161f; border-radius: 20px; padding: 12px;"><i class="fas fa-check-circle"></i> Zero prepayment charges</div><a href="#contact" class="btn btn-primary" style="width:100%;">Apply Now →</a></div>
+      <div class="service-tile reveal"><i class="fas fa-car" style="font-size: 42px; color:#10b981;"></i><h3>Car Loan</h3><p>New/Used | 100% on-road | 7 years | 8.75% p.a.</p><div style="margin: 16px 0; background:#11161f; border-radius: 20px; padding: 12px;"><i class="fas fa-bolt"></i> Approval in 4 hours</div><a href="#contact" class="btn btn-primary" style="width:100%;">Apply Now →</a></div>
+      <div class="service-tile reveal" style="border-left: 3px solid #f5a623;"><i class="fas fa-gem" style="font-size: 42px; color:#f5a623;"></i><h3>Gold Loan</h3><p>Loan against gold | 1.25% p.m. (8.75% p.a.) | Instant cash</p><div style="margin: 16px 0; background:#11161f; border-radius: 20px; padding: 12px;"><i class="fas fa-home"></i> Doorstep valuation</div><a href="https://wa.me/919131613481?text=Hi%2C%20I%20want%20Gold%20Loan%20with%20instant%20valuation" target="_blank" class="btn btn-gold" style="width:100%;"><i class="fab fa-whatsapp"></i> Check Gold Loan →</a></div>
+      <div class="service-tile reveal"><i class="fas fa-chart-line" style="font-size: 42px; color:#8b5cf6;"></i><h3>Business Loan</h3><p>MSME, Working capital | Unsecured up to ₹75L | 8.75% p.a.</p><div style="margin: 16px 0; background:#11161f; border-radius: 20px; padding: 12px;"><i class="fas fa-file-invoice"></i> GST based offer</div><a href="#contact" class="btn btn-outline" style="width:100%;">Enquire</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD LOAN DEDICATED SECTION -->
+<section id="gold-loan" class="section" style="background: radial-gradient(circle at 10% 20%, #0f0e0a, #010409);">
+  <div class="container">
+    <div class="scene-2021 reveal" style="background: linear-gradient(145deg, #1e1a10, #080804);">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
+        <div style="flex: 1;">
+          <div class="section-tag" style="background: rgba(245,166,35,0.2); border-color:#f5a623;"><i class="fas fa-ring"></i> Gold Loan Specialists</div>
+          <h2 class="section-title" style="font-size: 40px;">Instant Gold Loan<br><span style="color:#f5a623;">at 8.75% p.a.*</span></h2>
+          <ul style="margin: 24px 0; list-style: none;">
+            <li><i class="fas fa-check-circle" style="color:#f5a623;"></i> Loan against gold jewellery & coins</li>
+            <li><i class="fas fa-check-circle" style="color:#f5a623;"></i> No income proof required up to ₹25 Lakhs</li>
+            <li><i class="fas fa-check-circle" style="color:#f5a623;"></i> Doorstep gold purity check & pickup</li>
+            <li><i class="fas fa-check-circle" style="color:#f5a623;"></i> Instant disbursal via NEFT/IMPS</li>
+          </ul>
+          <a href="https://wa.me/919131613481?text=Hi%2C%20I%20want%20to%20apply%20for%20Gold%20Loan%20-%20Request%20doorstep%20valuation" target="_blank" class="btn btn-gold" style="font-size: 16px;"><i class="fab fa-whatsapp"></i> Get Gold Loan Quote on WhatsApp</a>
+        </div>
+        <div style="flex: 1; text-align: center;">
+          <i class="fas fa-weight-hanging" style="font-size: 80px; color: #f5a623;"></i>
+          <div class="glass-card" style="margin-top: 24px; padding: 20px;"><i class="fas fa-percent"></i> <strong>1.25% per month</strong> | Low processing fees</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENE 2021 SECTION -->
+<section id="scene2021" class="section">
+  <div class="container">
+    <div class="scene-2021 reveal">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+        <div style="flex:1"><div class="section-tag"><i class="fas fa-calendar-alt"></i> Scene 2021: The Digital Pivot</div><h2 class="section-title" style="font-size: 38px;">From legacy to <span style="color:#06b6d4;">hyper-digital</span> lending</h2><p style="color:#b9c7d9; line-height:1.6;">In 2021, MakanFinance revolutionized loan access by integrating AI underwriting, reducing approval time from weeks to 48 hours. Today, we are one of India's fastest-growing loan facilitators with 150+ banking partners and a 98% customer satisfaction rate.</p><div style="margin-top: 24px;"><i class="fas fa-chart-line"></i> 350% growth since 2021 &nbsp;&nbsp; <i class="fas fa-users"></i> 10,000+ families empowered</div></div>
+        <div style="flex:1; text-align:center;"><div class="glass-card" style="padding: 28px;"><i class="fas fa-robot" style="font-size: 54px;"></i><div style="font-weight:800;">#FintechInnovation</div><div>First in MP to offer WhatsApp loan tracking</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMI CALCULATOR -->
+<section id="emi" class="section" style="background: #05080f;">
+  <div class="container">
+    <div class="text-center"><div class="section-tag"><i class="fas fa-chart-simple"></i> Loan Simulator</div><h2 class="section-title">EMI <span style="color:#f5a623;">Calculator</span> 8.75% Base</h2></div>
+    <div class="emi-panel reveal">
+      <div>
+        <div class="slider-group"><label>💰 Loan Amount (₹)</label><input type="range" id="loanAmount" min="50000" max="50000000" step="100000" value="2500000"><div><span id="amountShow">₹25,00,000</span></div></div>
+        <div class="slider-group"><label>📈 Interest Rate (% p.a.) <span style="color:#f5a623;">(min 8.75%)</span></label><input type="range" id="interestRate" min="8.75" max="18" step="0.1" value="8.75"><div><span id="rateShow">8.75%</span></div></div>
+        <div class="slider-group"><label>📅 Tenure (Years)</label><input type="range" id="tenureYears" min="1" max="30" step="1" value="20"><div><span id="tenureShow">20 Years</span></div></div>
+      </div>
+      <div>
+        <div class="glass-card" style="padding: 28px; text-align: center;"><div style="font-size: 18px;">Estimated Monthly EMI</div><div style="font-size: 52px; font-weight: 900;" id="emiResult">₹0</div><div id="totalPayment">Total Payable: ₹0</div><div style="margin: 20px 0;"><div style="display:flex; justify-content:space-between;"><span>Principal</span><span id="principalVal">-</span></div><div style="display:flex; justify-content:space-between;"><span>Interest</span><span id="interestVal">-</span></div><div style="height:8px; background:#2d3748; margin-top:12px; border-radius:8px;"><div id="principalBarFill" style="width:0%; height:100%; background:#3b82f6; border-radius:8px;"></div></div></div><a href="#contact" class="btn btn-primary" style="width:100%;">Apply for this EMI →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container"><div class="text-center"><div class="section-tag"><i class="fas fa-comment-dots"></i> Client Stories</div><h2 class="section-title">Trusted by <span style="color:#06b6d4;">1000+</span> families</h2></div>
+    <div class="services-grid" style="margin-top: 48px;">
+      <div class="glass-card" style="padding: 28px;"><i class="fas fa-star" style="color:#f5a623;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p style="margin:16px 0;">"Gold loan disbursed within 2 hours! They came home, evaluated and transferred money instantly. Best rate 8.75%."</p><strong>- Meera Saxena, Indore</strong></div>
+      <div class="glass-card" style="padding: 28px; border-color:#3b82f6;"><i class="fas fa-star" style="color:#f5a623;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Home loan at 8.75% with minimal paperwork. MakanFinance made my dream home possible. Scene 2021 journey is inspiring!"</p><strong>- Rajat Verma, Pune</strong></div>
+      <div class="glass-card" style="padding: 28px;"><i class="fas fa-star" style="color:#f5a623;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><p>"Car loan approval in 24 hours. Interest rate matched 8.75% and they handled everything on WhatsApp. Highly professional."</p><strong>- Ankit Sharma, Delhi</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section" style="background: radial-gradient(circle at 0% 30%, #0a0f1a, #020408);">
+  <div class="container">
+    <div class="text-center"><div class="section-tag"><i class="fas fa-headset"></i> 24/7 Expert Connect</div><h2 class="section-title">Apply for <span style="color:#f5a623;">Loan</span> in 2 mins</h2><div class="section-sub">Fill the details, our loan specialist will reach you on WhatsApp within 2 hours.</div></div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px;">
+      <div class="glass-card" style="padding: 32px;">
+        <i class="fas fa-hand-holding-usd" style="font-size: 48px; color:#f5a623;"></i>
+        <h3 style="margin: 20px 0;">Why MakanFinance?</h3>
+        <ul style="list-style: none;">
+          <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Lowest interest rates from 8.75% p.a.</li>
+          <li><i class="fas fa-check-circle" style="color:#10b981;"></i> 100% paperless & doorstep service</li>
+          <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Gold loan in 1 hour</li>
+          <li><i class="fas fa-check-circle" style="color:#10b981;"></i> Free CIBIL consultation</li>
+        </ul>
+        <div class="stats-modern" style="margin-top: 32px; gap:12px; grid-template-columns: 1fr 1fr;">
+          <div><i class="fab fa-whatsapp"></i> +91 91316 13481</div>
+          <div><i class="fab fa-instagram"></i> @makanfinance</div>
+        </div>
+      </div>
+      <div class="form-dark glass-card" style="padding: 36px;">
+        <h3>⚡ Quick Eligibility Form</h3>
+        <input type="text" id="fullName" placeholder="Full Name *" style="margin-bottom: 16px;">
+        <input type="email" id="emailId" placeholder="Email Address *" style="margin-bottom: 16px;">
+        <select id="loanTypeSelect" style="margin-bottom: 16px;">
+          <option value="Home Loan">Home Loan (8.75% p.a.)</option>
+          <option value="Car Loan">Car Loan (8.75% p.a.)</option>
+          <option value="Gold Loan">Gold Loan (1.25% pm / 8.75% p.a.)</option>
+          <option value="Business Loan">Business Loan (8.75% p.a.)</option>
+        </select>
+        <input type="text" id="loanAmountReq" placeholder="Required Loan Amount (₹) *" style="margin-bottom: 16px;">
+        <input type="tel" id="mobileWhatsApp" placeholder="WhatsApp Number *" style="margin-bottom: 16px;">
+        <button class="btn btn-primary" id="submitFinalForm" style="width:100%;"><i class="fab fa-whatsapp"></i> Submit & Get Response on WhatsApp</button>
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+          <a href="tel:+919407038231" class="btn btn-outline" style="flex:1;"><i class="fas fa-phone"></i> Call Now</a>
+          <a href="https://www.instagram.com/makanfinance?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn btn-outline" style="flex:1;"><i class="fab fa-instagram"></i> DM on IG</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+    <div><i class="fas fa-coins"></i> MakanFinance — Since 2021 | RBI Registered Associate</div>
+    <div><a href="#" style="color:#8b949e; text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:#8b949e; text-decoration:none;">Terms of Use</a> | <i class="fab fa-whatsapp"></i> +91 91316 13481</div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919131613481?text=Hi%20MakanFinance%2C%20I%20need%20loan%20assistance%20(Home%2FCar%2FGold%2FBusiness)" target="_blank"><i class="fab fa-whatsapp" style="font-size: 28px;"></i></a>
+
+<script>
+  // ========== HAMBURGER MENU FIXED ==========
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  function toggleMobileMenu() {
+    mobileMenu.classList.toggle('open');
+    hamburgerBtn.classList.toggle('active');
+    if (mobileMenu.classList.contains('open')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+  
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburgerBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', toggleMobileMenu);
+  }
+  
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
+  // ========== EMI CALCULATOR ==========
+  const amountSlider = document.getElementById('loanAmount');
+  const rateSlider = document.getElementById('interestRate');
+  const tenureSlider = document.getElementById('tenureYears');
+
+  function computeEMI() {
+    let P = parseFloat(amountSlider.value);
+    let r = parseFloat(rateSlider.value) / 12 / 100;
+    let n = parseFloat(tenureSlider.value) * 12;
+    let emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    if (!isFinite(emi)) emi = P / n;
+    let total = emi * n;
+    let interest = total - P;
+    document.getElementById('emiResult').innerText = '₹' + Math.round(emi).toLocaleString('en-IN');
+    document.getElementById('totalPayment').innerText = 'Total Payable: ₹' + Math.round(total).toLocaleString('en-IN');
+    document.getElementById('principalVal').innerText = '₹' + Math.round(P).toLocaleString();
+    document.getElementById('interestVal').innerText = '₹' + Math.round(interest).toLocaleString();
+    let pct = (P / total) * 100;
+    document.getElementById('principalBarFill').style.width = pct + '%';
+    document.getElementById('amountShow').innerText = '₹' + Math.round(P).toLocaleString();
+    document.getElementById('rateShow').innerText = rateSlider.value + '%';
+    document.getElementById('tenureShow').innerText = tenureSlider.value + ' Years';
+  }
+  
+  if (amountSlider) {
+    amountSlider.addEventListener('input', computeEMI);
+    rateSlider.addEventListener('input', computeEMI);
+    tenureSlider.addEventListener('input', computeEMI);
+    computeEMI();
+  }
+
+  // ========== CONTACT FORM TO WHATSAPP ==========
+  document.getElementById('submitFinalForm').addEventListener('click', function () {
+    let name = document.getElementById('fullName').value.trim();
+    let email = document.getElementById('emailId').value.trim();
+    let loanType = document.getElementById('loanTypeSelect').value;
+    let amount = document.getElementById('loanAmountReq').value.trim();
+    let phone = document.getElementById('mobileWhatsApp').value.trim();
+    if (!name || !email || !loanType || !amount || !phone) {
+      alert("⚠️ Please fill all the required fields (*).");
+      return;
+    }
+    let msg = `🏦 *MakanFinance Loan Request* 🏦%0A%0A👤 *Name:* ${encodeURIComponent(name)}%0A📧 *Email:* ${encodeURIComponent(email)}%0A📞 *WhatsApp:* ${encodeURIComponent(phone)}%0A🏷️ *Loan Type:* ${encodeURIComponent(loanType)}%0A💰 *Amount:* ₹${encodeURIComponent(amount)}%0A%0A✅ *Rate:* 8.75% p.a. minimum%0A📌 *Request via website form*`;
+    window.open(`https://wa.me/919131613481?text=${msg}`, '_blank');
+    alert("✓ Request sent! Our loan expert will connect on WhatsApp within 2 hours.");
+  });
+
+  // ========== SCROLL REVEAL ANIMATION ==========
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.service-tile, .scene-2021, .glass-card').forEach(el => observer.observe(el));
+  
+  const style = document.createElement('style');
+  style.textContent = `
+    .mobile-menu {
+      display: none;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    @media (max-width: 900px) {
+      .mobile-menu {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #010409;
+        border-top: 1px solid var(--border-dim);
+        border-bottom: 1px solid var(--border-dim);
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+</body>
+</html>
